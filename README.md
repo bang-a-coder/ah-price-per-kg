@@ -1,6 +1,6 @@
 # AH Price per Kilo — Chrome Extension for Albert Heijn
 
-Compare prices at [Albert Heijn](https://www.ah.nl) by seeing the **price per kilogram** or **price per liter** directly on every product card. Works on search results, category pages, and anywhere ah.nl displays products in grid view.
+Compare prices at [Albert Heijn](https://www.ah.nl) by seeing the **price per kilogram**, **price per liter**, or **price per piece** directly on every product card. Works on search results, category pages, and anywhere ah.nl displays products in grid view.
 
 No more mental math to figure out which pack size is the better deal.
 
@@ -8,8 +8,8 @@ No more mental math to figure out which pack size is the better deal.
 
 - Calculates price per kg for products listed in grams or kilograms
 - Calculates price per liter for products listed in ml, cl, or liters
+- Calculates price per piece for items sold by `stuks`
 - Handles approximate weights (`ca. 200 g`)
-- Skips items sold by piece (`stuks`) where per-kg doesn't apply
 - Works with infinite scroll — new products get prices automatically
 - One-click enable/disable via a minimal floating prompt
 - Zero data collection, zero network requests, fully offline
@@ -31,7 +31,7 @@ No more mental math to figure out which pack size is the better deal.
 | 1 kg | €XX.XX/kg |
 | 330 ml | €XX.XX/l |
 | 1 l | €XX.XX/l |
-| 10 stuks | *(skipped)* |
+| 6 stuks | €XX.XX/stuk |
 
 ## Install
 
