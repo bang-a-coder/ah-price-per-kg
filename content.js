@@ -24,7 +24,7 @@
     l:  [1,    'l'],
   };
 
-  const UNIT_RE = /^([\d.,]+)\s*(g|kg|ml|cl|l|stuks?|stuk)$/i;
+  const UNIT_RE = /^(?:ca\.\s*)?([\d.,]+)\s*(g|kg|ml|cl|l|stuks?|stuk)$/i;
 
   // ── State ──────────────────────────────────────────────────────────────────
 
