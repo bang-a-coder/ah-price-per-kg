@@ -28,7 +28,9 @@
 
   // ── State ──────────────────────────────────────────────────────────────────
 
-  let active = false;
+  const STORAGE_KEY = 'ahpkg-active';
+
+  let active = sessionStorage.getItem(STORAGE_KEY) === '1';
   let observer = null;
 
   // ── Styles ─────────────────────────────────────────────────────────────────
@@ -187,6 +189,7 @@
       observer = observe(SEL.card, processCard);
     }
     active = !active;
+    sessionStorage.setItem(STORAGE_KEY, active ? '1' : '0');
     render();
   }
 
@@ -195,6 +198,11 @@
   document.head.append(el('style', { textContent: CSS }));
   render();
   document.body.append(floater);
+
+  if (active) {
+    processAll();
+    observer = observe(SEL.card, processCard);
+  }
 
   observe(SEL.card, () => {
     floater.style.display = 'flex';
