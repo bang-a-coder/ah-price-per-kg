@@ -1,20 +1,33 @@
-# AH Price per Kilo
+# AH Price per Kilo — Chrome Extension for Albert Heijn
 
-Chrome extension that shows the price per kilogram or liter on [Albert Heijn](https://www.ah.nl) product cards, making it easy to compare value across products.
+Compare prices at [Albert Heijn](https://www.ah.nl) by seeing the **price per kilogram** or **price per liter** directly on every product card. Works on search results, category pages, and anywhere ah.nl displays products in grid view.
+
+No more mental math to figure out which pack size is the better deal.
+
+## Features
+
+- Calculates price per kg for products listed in grams or kilograms
+- Calculates price per liter for products listed in ml, cl, or liters
+- Handles approximate weights (`ca. 200 g`)
+- Skips items sold by piece (`stuks`) where per-kg doesn't apply
+- Works with infinite scroll — new products get prices automatically
+- One-click enable/disable via a minimal floating prompt
+- Zero data collection, zero network requests, fully offline
 
 ## How it works
 
-1. Browse any page on ah.nl that shows products (search results, categories, etc.)
-2. A small prompt appears in the top-right corner: **"Show €/kg?"**
-3. Click **Enable** — every product card now shows the computed price per kg or per liter
-4. The extension stays active for the tab lifetime, including dynamically loaded products (infinite scroll)
+1. Browse any page on ah.nl with products
+2. A prompt appears top-right: **"Show €/kg?"**
+3. Click **Enable** — every product card shows the unit price
+4. Stays active for the tab, including dynamically loaded products
 5. Click **✕** to disable
 
-## What it computes
+## Conversion table
 
 | Unit on card | Displayed as |
 |---|---|
 | 500 g | €XX.XX/kg |
+| ca. 200 g | €XX.XX/kg |
 | 1 kg | €XX.XX/kg |
 | 330 ml | €XX.XX/l |
 | 1 l | €XX.XX/l |
@@ -28,7 +41,7 @@ Chrome extension that shows the price per kilogram or liter on [Albert Heijn](ht
 2. Open `chrome://extensions` in Chrome
 3. Enable **Developer mode** (top-right toggle)
 4. Click **Load unpacked** and select the cloned folder
-5. Navigate to [ah.nl](https://www.ah.nl) and start browsing
+5. Go to [ah.nl](https://www.ah.nl) and search for any product
 
 ## Privacy
 
@@ -37,9 +50,9 @@ This extension:
 - Collects **no data**
 - Makes **no network requests**
 - Runs **only** on `www.ah.nl`
-- Has **no permissions** beyond the content script
+- Requires **no permissions** beyond the content script
 
-All computation happens locally in the browser using data already visible on the page.
+All computation happens locally in the browser using prices already visible on the page. See [PRIVACY.md](PRIVACY.md) for the full privacy policy.
 
 ## License
 
