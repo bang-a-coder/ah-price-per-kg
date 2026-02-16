@@ -17,11 +17,13 @@
   //   price_per_base = price × multiplier / quantity
 
   const UNITS = {
-    g:  [1000, 'kg'],
-    kg: [1,    'kg'],
-    ml: [1000, 'l'],
-    cl: [100,  'l'],
-    l:  [1,    'l'],
+    g:     [1000, 'kg'],
+    kg:    [1,    'kg'],
+    ml:    [1000, 'l'],
+    cl:    [100,  'l'],
+    l:     [1,    'l'],
+    stuk:  [1,    'stuk'],
+    stuks: [1,    'stuk'],
   };
 
   const UNIT_RE = /^(?:ca\.\s*)?([\d.,]+)\s*(g|kg|ml|cl|l|stuks?|stuk)$/i;
